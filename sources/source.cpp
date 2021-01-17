@@ -83,7 +83,7 @@ public:
 
     void to_read_the_answer() {
         is_read = 0;
-        read(the_socket,buffer(
+        read(the_socket, buffer(
                 the_buffer),
              boost::bind(
                      &talk_to_server::
@@ -112,11 +112,11 @@ public:
                     the_sleeping_time));
         }
     }
+
 private:
     tcp::socket the_socket;
     int is_read;
-    enum { max_message_length = 1024 };
-    char the_buffer[max_message_length];
+    char the_buffer[1024];
     bool is_started;
     const int the_sleeping_time = 7000;
     std::string the_username;
